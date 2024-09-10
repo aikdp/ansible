@@ -17,9 +17,6 @@
   - name: PLAY-01 TASK-01
     ansible.builtin.debug: #it is to print the info -debug means print
       msg: "This is from PLAY-01 and TASK-01"
-  - name: PLAY-02
-    hosts: web
-    tasks:
-    - name: PLAY-02 TASK-01
-      ansible.builtin.debug:
-        msg: "This is from PLAY-02 and TASK-01"
+  - name: PLAY-02 TASK-01
+    ansible.builtin.debug:
+      msg: "This is from PLAY-02 and TASK-01"
