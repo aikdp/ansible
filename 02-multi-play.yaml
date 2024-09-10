@@ -1,22 +1,22 @@
-# - name: PLAY-01
-#   hosts: web
-#   tasks:
-#   - name: PLAY-01 TASK-01
-#     ansible.builtin.debug: #it is to print the info -debug means print
-#       msg: "This is from PLAY-01 and TASK-01"
-# - name: PLAY-02
-#   hosts: web
-#   tasks:
-#   - name: PLAY-02 TASK-01
-#     ansible.builtin.debug:
-#       msg: "This is from PLAY-02 and TASK-01"
-
-- name: PLAY-01
+- name: PLAY-01  #this is for play level 1
   hosts: web
   tasks:
   - name: PLAY-01 TASK-01
     ansible.builtin.debug: #it is to print the info -debug means print
       msg: "This is from PLAY-01 and TASK-01"
-  - name: PLAY-01 TASK-02
+      
+- name: PLAY-02 #play level 2
+  hosts: web
+  tasks:
+  - name: PLAY-02 TASK-01
     ansible.builtin.debug:
-      msg: "This is from PLAY-01 and TASK-02"
+      msg: "This is from PLAY-02 and TASK-01"
+
+# - name: PLAY-01 #this is only for one play level with number of tasks
+#   tasks:
+#   - name: PLAY-01 TASK-01
+#     ansible.builtin.debug: #it is to print the info -debug means print
+#       msg: "This is from PLAY-01 and TASK-01"
+#   - name: PLAY-01 TASK-02
+#     ansible.builtin.debug:
+#       msg: "This is from PLAY-01 and TASK-02"
