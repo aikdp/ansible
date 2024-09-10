@@ -4,6 +4,6 @@
   - name: PLAY-01 TASK-01
     ansible.builtin.debug: #it is to print the info -debug means print
       msg: "This is from PLAY-01 and TASK-01"
-  - name: PLAY-01 TASK-02
-    anisble.builtin.debug:
-      msg "This is from PLAY-01 and TASK-02"
+- name: PLAY-01 TASK-02
+  anisble.builtin.debug:
+    msg "This is from PLAY-01 and TASK-02"
