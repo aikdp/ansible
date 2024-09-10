@@ -13,6 +13,7 @@
       anisble.builtin.debug:
         msg: "Hi, Iam learning {{ COURSE }}, Duration is {{ DURATION }} and Trainer is {{ TRAINER }}"
   
+    - name: Varibles form Prompt
       vars_prompt: #do not write anything in vars-prompt
         - name: COURSE
           prompt: Please enter course name
@@ -23,6 +24,8 @@
         - name: TRAINER
           prompt: Please enter ctrainer name
           private: false
+      tasks:
+        - name: Varibles forn TASK
       anisble.builtin.debug:
         msg: "Hi, Iam learning {{ COURSE }}, Duration is {{ DURATION }} and Trainer is {{ TRAINER }}"
   
