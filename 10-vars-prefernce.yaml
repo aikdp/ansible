@@ -2,10 +2,10 @@
   hosts: web
   # vars_files:  #3-ommenting
   # - vars.yaml
-  vars:
-    COURSE: "Devops with AWS PLAY LEVEL VARS"
-    DURATION: "20HRS"
-    TRAINER: "SIVA REDDY"
+  # vars:         #5-commnting
+  #   COURSE: "Devops with AWS PLAY LEVEL VARS"
+  #   DURATION: "20HRS"
+  #   TRAINER: "SIVA REDDY"
   # vars_prompt: #do not write anything in vars-prompt    #4-commenting
         # - name: COURSE
         #   prompt: Please enter course name
@@ -29,7 +29,8 @@
 #1. Commandline args
 #2. Task level
 #3. Vars from FIles (comment for files for next run)
-#4. Prompt
+#4. Prompt VARS
+#5. PLAY LEvel VArs
   
   
   
