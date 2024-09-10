@@ -1,0 +1,21 @@
+#YAML Yet Another Markup Language, it works on intendation, means space
+
+-Name: Durgaprasad
+  Email: kdprasad@gmail.com
+  Addresses:  #List of address
+  - type: Permanent
+    addressline1: kothapeta street
+    addressline2: west vipparru
+  -type: Current
+    addressline1: pentapadu
+    addressline2: tadepalligudem
+-Name: Ram Mani Pavan
+  Email: grmprasad@gmail.com
+  Addresses: 
+  -type: Current
+    addressline1: RHB clolony
+    addressline2: Mahadevapura
+  -type: Permanent
+    addressline1: Garudacharpalya
+    addressline2: Opposite to phenix mall
+  

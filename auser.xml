@@ -1,0 +1,34 @@
+<Students>
+    <Student>
+        <Name>DUrga Prasad</Nanme>
+        <Email>kdprasadgmail.com</Email>
+        <Address>
+            <Currentaddress>
+                <Addressline1>Kothapeta Street</Addressline1>
+                <Addressline2>westvipparru</Addressline2>
+                <Addressline3>Pentapdu</Addressline3>
+            </Currentaddress>
+            <Permanent>
+                <Addressline1>Kothapeta Street</Addressline1>
+                <Addressline2>westvipparru</Addressline2>
+                <Addressline3>Pentapdu</Addressline3>
+            </Permanent>
+        </Address>
+    </Student>
+    <Student>
+        <Name>DUrga Prasad</Nanme>
+        <Email>kdprasadgmail.com</Email>
+        <Address>
+            <Currentaddress>
+                <Addressline1>Kothapeta Street</Addressline1>
+                <Addressline2>westvipparru</Addressline2>
+                <Addressline3>Pentapdu</Addressline3>
+            </Currentaddress>
+            <Permanent>
+                <Addressline1>Kothapeta Street</Addressline1>
+                <Addressline2>westvipparru</Addressline2>
+                <Addressline3>Pentapdu</Addressline3>
+            </Permanent>
+        </Address>
+    </Student>
+</Student>

@@ -1,0 +1,19 @@
+{
+    "Name": "Surya Sri",
+    "Email": "pushpanssri@gmail.com",
+    "Addresses":
+    [
+        {
+            "type": "Currentaddress",
+            "Addressline1": "Kothapeta Street",
+            "Addressline2": "Pentapadu",
+            "Addressline3": "West Godavari"
+        },
+        {
+            "type": "Permanentaddress",
+            "Addressline1": "Kothapeta Street",
+            "Addressline2": "Pentapadu",
+            "Addressline3": "West Godavari"
+        }
+    ]    
+}
