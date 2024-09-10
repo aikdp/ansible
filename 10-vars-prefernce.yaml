@@ -6,18 +6,7 @@
     COURSE: "Devops with AWS PLAY LEVEL VARS"
     DURATION: "20HRS"
     TRAINER: "SIVA REDDY"
-  tasks:
-    - name: print he info PLAY
-      ansible.builtin.debug:
-          msg: "Hi, Iam learning {{ COURSE }}, Duration is {{ DURATION }} and Trainer is {{ TRAINER }}"
-    - name: print the info TASK
-      vars:
-        COURSE: "Devops with AWS-TASK level VARS"
-      ansible.builtin.debug:
-        msg: "Hi, Iam learning {{ COURSE }}, Duration is {{ DURATION }} and Trainer is {{ TRAINER }}"
-  
-    
-      vars_prompt: #do not write anything in vars-prompt
+  vars_prompt: #do not write anything in vars-prompt
         - name: COURSE
           prompt: Please enter course name
           private: false
@@ -27,7 +16,14 @@
         - name: TRAINER
           prompt: Please enter ctrainer name
           private: false
-          anisble.builtin.debug:
-            msg: "Hi, Iam learning {{ COURSE }}, Duration is {{ DURATION }} and Trainer is {{ TRAINER }}"
+  tasks:
+    - name: print the info TASK
+      vars:
+        COURSE: "Devops with AWS-TASK level VARS"
+        DURATION: "200HRS"
+        TRAINER: "REDDY"
+      ansible.builtin.debug:
+        msg: "Hi, Iam learning {{ COURSE }}, Duration is {{ DURATION }} and Trainer is {{ TRAINER }}"
+  
   
   
