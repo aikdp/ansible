@@ -16,7 +16,7 @@
       ansible.builtin.debug:
         msg: "Hi, Iam learning {{ COURSE }}, Duration is {{ DURATION }} and Trainer is {{ TRAINER }}"
   
-    - name: Varibles form Prompt
+    
       vars_prompt: #do not write anything in vars-prompt
         - name: COURSE
           prompt: Please enter course name
