@@ -1,0 +1,19 @@
+- name: variables to print
+  hosts: web
+  vars:   #Play level varaiables, all tasks in this play have access to this variable
+    COURSE: "Devops with AWS from PLAY LEVEL"
+    DURATION: "4 Months"
+    TRAINER: "Siva Kumar Reddy"
+  tasks:
+  - name: print var info
+    ansible.builtin.debug:
+     msg: " Hi, I am leraning {{ COURSE }}, Durtaion is {{ DURATION }} and trainer is {{ TRAINER }}"
+  - name: print the varibales in task level  #TASK LEVEL varaibles override with play level vars 
+    vars:
+      COURSE: "ANSIBLE with AWS TASK LEVEL"
+    ansible.builtin.debug:
+      msg: "Hi, I am leraning {{ COURSE }}, Durtaion is {{ DURATION }} and trainer is {{ TRAINER }}"
+
+  - name: Variables are not given under task level  #Noraml-hence PLAY level
+    ansible.builtin.debug:
+      msg: "Hi, I am leraning {{ COURSE }}, Durtaion is {{ DURATION }} and trainer is {{ TRAINER }}"

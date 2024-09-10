@@ -1,30 +1,10 @@
-# - name: variables to print
-#   hosts: web
-#   vars:
-#     COURSE: "Devops with AWS"
-#     DURATION: "4 Months"
-#     TRAINER: "Siva Kumar Reddy"
-#   tasks:
-#   - name: print var info
-#     ansible.builtin.debug:
-#      msg: " Hi, I am leraning {{ COURSE }}, Durtaion is {{ DURATION }} and trainer is {{ TRAINER }}"
-
 - name: variables to print
   hosts: web
   vars:
-    COURSE: "Devops with AWS from PLAY LEVEL"
+    COURSE: "Devops with AWS"
     DURATION: "4 Months"
     TRAINER: "Siva Kumar Reddy"
   tasks:
   - name: print var info
     ansible.builtin.debug:
      msg: " Hi, I am leraning {{ COURSE }}, Durtaion is {{ DURATION }} and trainer is {{ TRAINER }}"
-  - name: print the varibales in task level
-    vars:
-      COURSE: "ANSIBLE with AWS TASK LEVEL"
-    ansible.builtin.debug:
-      msg: "Hi, I am leraning {{ COURSE }}, Durtaion is {{ DURATION }} and trainer is {{ TRAINER }}"
-
-  - name: Variables are not given under task level
-    ansible.builtin.debug:
-      msg: "Hi, I am leraning {{ COURSE }}, Durtaion is {{ DURATION }} and trainer is {{ TRAINER }}"
