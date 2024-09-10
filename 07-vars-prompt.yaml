@@ -24,7 +24,7 @@
       private: false
     - name: TRAINER
       prompt: Please enter tariner name 
-      privare: false
+      private: false
   tasks:
   - name: Course information from prompt
     ansible.builtin.debug:
