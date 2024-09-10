@@ -13,16 +13,16 @@
       anisble.builtin.debug:
         msg: "Hi, Iam learning {{ COURSE }}, Duration is {{ DURATION }} and Trainer is {{ TRAINER }}"
   
-      vars_prompt: Couse info from prompt
-    - name: COURSE
-      prompt: Please enter course name
-      private: false
-    - name: DURATION
-      prompt: Please enter duration
-      private: false
-    - name: TRAINER
-      prompt: Please enter ctrainer name
-      private: false
+      vars_prompt: #do not write anything in vars-prompt
+        - name: COURSE
+          prompt: Please enter course name
+          private: false
+        - name: DURATION
+          prompt: Please enter duration
+          private: false
+        - name: TRAINER
+          prompt: Please enter ctrainer name
+          private: false
       anisble.builtin.debug:
         msg: "Hi, Iam learning {{ COURSE }}, Duration is {{ DURATION }} and Trainer is {{ TRAINER }}"
   
