@@ -1,12 +1,30 @@
+# - name: Varibales from prompt  
+#   hosts: web
+#   vars_prompt: #default is confidential
+#     - name: COURSE 
+#       prompt: Please enter Course name
+#     - name: DURATION
+#       prompt: Please enter duration
+#     - name: TRAINER
+#       prompt: Please enter tariner name 
+#   tasks:
+#   - name: Course information from prompt
+#     ansible.builtin.debug:
+#       msg: "I am learnig {{ COURSE }}, Duration is {{ DURATION }} and tariner is {{ TRAINER }}"
+
+
 - name: Varibales from prompt
   hosts: web
   vars_prompt:
     - name: COURSE
       prompt: Please enter Course name
+      private: false    #means not confidential, you can see what enters at prompt
     - name: DURATION
       prompt: Please enter duration
+      private: false
     - name: TRAINER
       prompt: Please enter tariner name 
+      privare: false
   tasks:
   - name: Course information from prompt
     ansible.builtin.debug:
