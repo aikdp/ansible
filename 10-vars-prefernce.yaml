@@ -7,10 +7,13 @@
     DURATION: "20HRS"
     TRAINER: "SIVA REDDY"
   tasks:
-    - name: print he info
+    - name: print he info PLAY
+      ansible.builtin.debug:
+          msg: "Hi, Iam learning {{ COURSE }}, Duration is {{ DURATION }} and Trainer is {{ TRAINER }}"
+    - name: print the info TASK
       vars:
         COURSE: "Devops with AWS-TASK level VARS"
-      anisble.builtin.debug:
+      ansible.builtin.debug:
         msg: "Hi, Iam learning {{ COURSE }}, Duration is {{ DURATION }} and Trainer is {{ TRAINER }}"
   
     - name: Varibles form Prompt
@@ -24,9 +27,7 @@
         - name: TRAINER
           prompt: Please enter ctrainer name
           private: false
-      tasks:
-        - name: Varibles forn TASK
-      anisble.builtin.debug:
-        msg: "Hi, Iam learning {{ COURSE }}, Duration is {{ DURATION }} and Trainer is {{ TRAINER }}"
+          anisble.builtin.debug:
+            msg: "Hi, Iam learning {{ COURSE }}, Duration is {{ DURATION }} and Trainer is {{ TRAINER }}"
   
   
