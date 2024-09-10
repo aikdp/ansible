@@ -14,7 +14,7 @@
 
 - name: nginx install and run
   hosts: local
-  connection: localhost
+  ansible_connection: localhost
   become: yes  ##takes sude access#check and run without root first then include root next
   tasks:
   - name: install nginx
