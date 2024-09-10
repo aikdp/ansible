@@ -1,0 +1,29 @@
+- name: Varibles from PLAY LEVEL
+  hosts: web
+  vars_files:
+  - vars.yaml
+  vars:
+    COURSE: "Devops with AWS PLAY LEVEL VARS"
+    DURATION: "20HRS"
+    TRAINER: "SIVA REDDY"
+  tasks:
+    - name: TASK level Varibales
+      vars:
+        COURSE: "Devops with AWS-TASK level VARS"
+      anisble.builtin.debug:
+      msg: "Hi, Iam learning {{ COURSE }}, Duration is {{ DURATION }} and Trainer is {{ TRAINER }}"
+  
+      vars_prompt: Couse info from prompt
+    - name: COURSE
+      prompt: Please enter course name
+      private: false
+    - name: DURATION
+      prompt: Please enter duration
+      private: false
+    - name: TRAINER
+      prompt: Please enter ctrainer name
+      private: false
+      anisble.builtin.debug:
+      msg: "Hi, Iam learning {{ COURSE }}, Duration is {{ DURATION }} and Trainer is {{ TRAINER }}"
+  
+  
