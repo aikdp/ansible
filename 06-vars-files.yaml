@@ -1,6 +1,6 @@
 - name: Variables from a file
   hosts: web
-  vars_files:
+  vars_files: # variable declaring in a file
   - vars.yaml
   tasks:
     - name: Course information
