@@ -1,5 +1,20 @@
+# - name: nginx install and run
+#   hosts: web 
+#   become: yes  ##takes sude access#check and run without root first then include root next
+#   tasks:
+#   - name: install nginx
+#     ansible.builtin.package:  #you can search for modules in google(ansible nginx module) heterogenous module that can work for all distributions
+#       name: nginx
+#       state: present 
+#   - name: run nginx and enable nginx
+#     ansible.builtin.service:  #you search for  modules 
+#       name: nginx
+#       state: started
+#       enabled: yes
+
 - name: nginx install and run
-  hosts: web 
+  hosts: local
+  connection: localhost
   become: yes  ##takes sude access#check and run without root first then include root next
   tasks:
   - name: install nginx
