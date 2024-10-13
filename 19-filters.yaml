@@ -15,4 +15,4 @@
   tasks:
     - name: print the defalut variables
       ansible.builtin.debug:
-        msg: " I am learning {{ COURSE | default 'AWS Devops' }}"
+        msg: " I am learning {{ COURSE | default ('AWS Devops') }}"
