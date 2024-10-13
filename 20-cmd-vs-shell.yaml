@@ -28,3 +28,8 @@
        ansible.builtin.command: ps -ef | grep ssh
        register: output
     
+    #Shell is login to server and execute the inside the server, Shell less secure, beacuse it will access and execute cpommand inside servers.
+    # where as command module is just issue the command, hence command module is secure
+
+    #examle: In PMO office we can enter without permision. hence, here Command module has less access so it is secure.
+    #Shell has accessing servers as well, hence less secure 
