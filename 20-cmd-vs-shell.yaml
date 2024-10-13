@@ -7,13 +7,13 @@
 #       ansible.builtin.command: ls -ltr > /tmp/output.txt
 
 
-#command vs shell uisnbg ansible
-- name: command vs shell with anible
-  hosts: local
-  connection: local
-  tasks:
-    - name: runn the shell
-      ansible.builtin.shell: ls -ltr > /tmp/output.txt
+# #command vs shell uisnbg ansible
+# - name: command vs shell with anible
+#   hosts: local
+#   connection: local
+#   tasks:
+#     - name: runn the shell
+#       ansible.builtin.shell: ls -ltr > /tmp/output.txt
 
 
 - name: shell vs command using ansible
