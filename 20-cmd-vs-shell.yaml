@@ -8,9 +8,23 @@
 
 
 #command vs shell uisnbg ansible
-- name:
+- name: command vs shell with anible
   hosts: local
   connection: local
   tasks:
     - name: runn the shell
       ansible.builtin.shell: ls -ltr > /tmp/output.txt
+
+
+- name: shell vs command using ansible
+  hosts: local
+  connection: local
+  tasks:
+    - name: use command to run the process
+      ansible.builtin.command: ps -ef | grep ssh
+      register: output
+    
+    - name: use shell to run the process
+      ansible.builtin.shell: ps -ef | grep ssh
+      register: output
+      
