@@ -4,6 +4,7 @@
   hosts: local
   connection: local
   vars:
+    domain: "telugudevops.online"
     subnet_id: "subnet-02571795c888dda45"
     sg_id: "sg-09805cbd3e2c45d5b"
     ami_id: "ami-09c813fb71547fc4f"
@@ -12,6 +13,11 @@
     - backend
     - frontend
   tasks:
+    - name: install boto3 and botocore
+      ansible.builtin.pip:
+      - boto3
+      - botocore
+      executable: pip3.9
     - name: Craete ec2 instance
       amazon.aws.ec2_instance:
         name: "{{ item }}"
@@ -22,6 +28,19 @@
       loop: "{{ instances }}"
       register: ec2_instances
 
-    - name: Print the ec2 instance info output
-      ansible.builtin.debug:
-        msg: "ec2 instance info output is {{ ec2_instances }}"
+    # - name: Print the ec2 instance info output
+    #   ansible.builtin.debug:
+    #     msg: "ec2 instance info output is {{ ec2_instances }}"
+
+    - name: Cretae route53 records
+      amazon.aws.route53:
+        state: present
+        zone: "{{ domain }}"
+        record: "{{ item.item }}. {{ domain }}"
+        type: A
+        ttl: 1
+        value: "{{ item.instances[0].private_ip_address}}"
+        wait: true
+        overwrite: true
+      loop: "{{ ec2_instances.results }}"
+      # when: item.item == "f"
