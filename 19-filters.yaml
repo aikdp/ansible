@@ -28,3 +28,9 @@
         wish: "Hi RAM, How are YOu. I am GOOD PRasad"
       ansible.builtin.debug:
         msg: "{{ wish | lower }}"
+
+    - name: get the unique numbers
+      vars:
+        wish: {1,2,3,1,2,4,5,1,0,3,2,33,4,4,44}
+      ansible.builtin.debug:
+        msg: "{{ wish | unique }}"
