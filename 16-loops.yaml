@@ -1,0 +1,16 @@
+#Checking loops for names
+
+- name: loops demo
+  hosts: local
+  connection: local
+  tasks:
+    - name: print the names
+      ansible.builtin.debug:
+        msg: "Hello {{ item }}"
+      loop:
+      - Prasad
+      - Ramesh
+      - Suresh
+      - Ram
+      - Pavan
+      - mani
