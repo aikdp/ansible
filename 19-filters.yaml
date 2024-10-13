@@ -47,4 +47,4 @@
         - name: "{Devops with Azure}"
         - duration: "{120HRs}"
       ansible.builtin.debug:
-        msg: "{{ course | list2dict }}"
+        msg: "{{ course | items2dict }}"
