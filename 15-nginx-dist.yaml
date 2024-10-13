@@ -1,0 +1,21 @@
+#Installing nginx without module
+
+- name: install nginx
+  hosts: web
+  become: yes
+  tasks:
+    - name: prinnt the stats
+      ansible.builtin.debug:
+        msg: "facts are {{ ansible_facts }}"
+    
+    - name: install nginx if underlying distribution is redhat
+      ansible.builtin.dnf:
+        name: nginx
+        state: present
+      when: ansible.os_family = "redhat"
+
+    - name: install nginx if underlying dist is debain
+      ansible.builtin.apt:
+        name: nginx
+        state: prsent
+      when: ansible.os_family = "debain"
