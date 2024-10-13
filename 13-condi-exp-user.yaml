@@ -22,6 +22,10 @@
       ignore_errors: true
       register: USER
 
-    - name: Print output USER info
+    - name: Print USER info
       ansible.builtin.debug:
         msg: "User info is {{ USER }}" 
+
+    - name: Create expense user
+      ansible.builtin.command: useradd expense
+      when: USER.rc != 0
