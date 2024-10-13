@@ -45,6 +45,7 @@
   vars_prompt:
     - name: number
       prompt: Please enter number4
+      type: string
       private: false
   tasks:
     - name: print this if number is lessthan 10
