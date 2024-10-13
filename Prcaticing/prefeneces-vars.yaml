@@ -1,0 +1,27 @@
+#Checking vars preferences
+- name: vars information
+  hosts: web
+  vars_file:
+    - vars.yaml
+  vars_prompt:
+    - name: COURSE
+      prompt: Please cousre name from prompt
+      private: false
+  vars:
+    COURSE: "Devops with AWS"
+  tasks:
+    - name: Print the  vars from different loctaions/levels
+      vars:
+        COURSE: "Devops with AWS form TASK level"
+      ansib;e.bulitin.debug:
+        msg: "I am Learning {{ COURSE }}"
+
+#RUN: ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=Devops321 preferences-vars.yaml -e "COURSE='Devops with AWS from Command line '"
+
+#1. Command Line
+#2. TAsk level
+#3. File
+#4. prompt
+#5. Play
+#6. Invnetory
+#7. roles

@@ -1,36 +1,37 @@
 - name: Varibles preferences
   hosts: web
-  # vars_files:  #3-ommenting
-  # - vars.yaml
-  # vars:         #5-commnting
-  #   COURSE: "Devops with AWS PLAY LEVEL VARS"
-  #   DURATION: "20HRS"
-  #   TRAINER: "SIVA REDDY"
-  # vars_prompt: #do not write anything in vars-prompt    #4-commenting
-        # - name: COURSE
-        #   prompt: Please enter course name
-        #   private: false
-        # - name: DURATION
-        #   prompt: Please enter duration
-        #   private: false
-        # - name: TRAINER
-        #   prompt: Please enter ctrainer name
-        #   private: false
+  vars_files:  #3-ommenting
+  - vars.yaml
+  vars:         #5-commnting
+    COURSE: "Devops with AWS PLAY LEVEL VARS"
+    DURATION: "20HRS"
+    TRAINER: "SIVA REDDY"
+  vars_prompt: #do not write anything in vars-prompt    #4-commenting
+        - name: COURSE
+          prompt: Please enter course name
+          private: false
+        - name: DURATION
+          prompt: Please enter duration
+          private: false
+        - name: TRAINER
+          prompt: Please enter ctrainer name
+          private: false
   tasks:
     - name: print the info preferences info
       vars:
-        # COURSE: "Devops with AWS-TASK level VARS"   #2-commenting
-        # DURATION: "200HRS"
-        # TRAINER: "REDDY"
+        COURSE: "Devops with AWS-TASK level VARS"   #2-commenting
+        DURATION: "200HRS"
+        TRAINER: "REDDY"
       ansible.builtin.debug:
         msg: "Hi, Iam learning {{ COURSE }}, Duration is {{ DURATION }} and Trainer is {{ TRAINER }}"
 
-#prefernces
+#highest prefernces
 #1. Commandline args
 #2. Task level
 #3. Vars from FIles (comment for files for next run)
 #4. Prompt VARS
 #5. PLAY LEvel VArs
-  
+#6. VArs from INVENTORY
+#ROLES --not discused yet
   
   

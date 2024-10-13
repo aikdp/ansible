@@ -3,13 +3,14 @@
 -Name: Durgaprasad
   Email: kdprasad@gmail.com
   Addresses:  #List of address
-  - type: Permanent
-    addressline1: kothapeta street
-    addressline2: west vipparru
+  -type: Permanent
+    addressline1: Kothapeta street
+    addressline2: West vipparru
   -type: Current
-    addressline1: pentapadu
-    addressline2: tadepalligudem
--Name: Ram Mani Pavan
+    addressline1: Pentapadu
+    addressline2: Tadepalligudem
+
+-Name: Ram Pavan
   Email: grmprasad@gmail.com
   Addresses: 
   -type: Current

@@ -1,0 +1,116 @@
+#cPing the server Ansible basic example
+- name: Ping the serevr
+  hosts: web
+  tasks:
+  - name: Check the ping server
+    ansbile.builtin.debug:
+      msg: "Hi I am DurgaParsad"
+
+#Multi Play level
+- name: PLAY 01
+  hosts: web
+  tasks:
+  - name: Play 1 and task 1
+    ansible.builtin.debug:
+      msg: "I am from PLAY 1 and TASK 1"
+- name: PLAY 02
+  hosts: web
+  tasks:
+  - name: Play 2 and Task 1
+    ansible.builtin.debug:
+      msg: "I am from PLAY 2 and Task 1"
+
+#nginx install and run it
+- name: install nginx
+  hosts: web
+  become: yes #give sudo access for installing nginx service
+  tasks:
+  - name: Insatlling nginx server
+    anible.bulitin.package:
+      name: nginx
+      state: present
+  - name: Start and enable nginx
+    ansible.bulitin.service:
+      name: nginx
+      state: started
+      enabled: yes
+
+#Variables declaring in Play level
+- name: Declaring variables
+  hosts: web
+  vars:
+    COURSE: "Devops with AWS"
+    TRAINER: "SIVA"
+    DURATION: "120Hrs"
+  tasks:
+  - name: Varibles info
+    ansible.bulitin.debug:
+      msg: "I am learning {{ COURSE}}, Duration is {{ DURATION }}, and Trainer is {{ TRAINER }}"
+
+#Declaring Variables in paly level and task level
+- name: task level vars
+  hosts: web
+  vars:   #this is Play level vars declaring
+    COURSE: "Devops with Amazon"
+    DURATION: "100 HRS"
+    TRAINER: "PRASAD"
+  tasks:
+  - name: vars info task 1
+    ansible.builtin.debug:
+    msg: "I am learning {{ COURSE}}, Duration is {{ DURATION }}, and Trainer is {{ TRAINER }}"
+
+  - name: vars info from task level 2
+    vars:    #this is task level vars declaring
+      COURSE: "Azure with Ansible"
+    ansible.builtin.debug:
+      msg: "I am learning {{ COURSE}}, Duration is {{ DURATION }}, and Trainer is {{ TRAINER }}"
+
+#declaring Vars in prompt
+- name: Decalring varaibales using prompt
+  hosts: web
+  vars_prompt:
+    - name: COURSE
+      prompt: Please enter course name
+      private: false
+    - name: DURATION
+      prompt: Please enter duration
+      private: false
+    - name: TRAINER
+      prompt: Please enter trainer name
+      private: false
+  tasks:
+  - name: prompt vars
+    ansible.builtin.debug:
+      msg: "I am learning {{ COURSE}}, with DUration is {{ DURATION }} and Trainer is {{ TRAINER }}"
+
+#Decalring variables at file(vars.yaml) 06.vars.files.yaml
+- name: Varibles info from file
+  hosts: web
+  vars_file:
+    - vars.yaml
+  tasks:
+    - name: Dcelaring vars in file
+      ansible.bulitin.debug:
+        msg: "I am learning {{ COURSE }}, with duration is {{ DURATION }} and Trainer is {{ TRAINER }}"
+
+#RUN:  ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 06.vars.files.yaml
+
+
+#Decalring variables in inventory
+- name: varsibles form inventory
+  hosts: web
+  tasks:
+  - name: vars form inventory
+    ansible.builtin.debug:
+      msg: "I am leanring {{ COURSE }}, with Duration is {{ DURATION }} and trainer is {{ TRAINER }}"
+
+#RUN:  ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 07.inventory.yaml
+
+#Dcelaing vars in command line
+- name: vars from command line
+  hosts: web
+  tasks:
+    - name: vars from cmd
+      ansible.builtin.debug:
+        msg: "Hi I am {{ NAME }} and How are you, I am {{ GREET }}"
+# RUN: ansible-palybook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 08.vars-args-cmd.yaml -e "NAME=Prasad GREET=Good"
