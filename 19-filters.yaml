@@ -64,3 +64,9 @@
         my_ip: "750.25.6.3"
       ansible.builtin.debug:
         msg: "{{ my_ip | ansible.utils.ipv4 }}"
+
+    - name: check given ip is valid or not
+      vars:
+        my_ip: "192.168.1.1"
+      ansible.builtin.debug:
+        msg: "{{ my_ip | ansible.utils.ipv4 }}"
