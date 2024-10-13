@@ -20,11 +20,11 @@
   hosts: local
   connection: local
   tasks:
-    - name: use command to run the process
-      ansible.builtin.command: ps -ef | grep ssh
-      register: output
-    
-    - name: use shell to run the process
-      ansible.builtin.shell: ps -ef | grep ssh
-      register: output
+     - name: use shell to run the process
+       ansible.builtin.shell: ps -ef | grep ssh
+       register: output
       
+     - name: use command to run the process
+       ansible.builtin.command: ps -ef | grep ssh
+       register: output
+    
