@@ -4,7 +4,7 @@
   hosts: web
   become: yes
   tasks:
-    - name: prinnt the stats
+    - name: print the stats
       ansible.builtin.debug:
         msg: "facts are {{ ansible_facts }}"
     
@@ -12,10 +12,10 @@
       ansible.builtin.dnf:
         name: nginx
         state: present
-      when: ansible_os_distribution = "RedHat"
+      when: ansible_distribution = "RedHat"
 
     - name: install nginx if underlying dist is debain
       ansible.builtin.apt:
         name: nginx
-        state: prsent
-      when: ansible_os_distribution = "Debain"
+        state: present
+      when: ansible_distribution = "Debain"
