@@ -1,0 +1,15 @@
+#delete few service and install few services
+
+- name: inatall and delet sevrices
+  hosts: web
+  become: yes
+  tasks:
+    - name: install services
+      ansible.builtin.package:
+        name: "item.name"
+        state: "item.state"
+      loop:
+      - {name: 'nginx', state: 'absent'}
+      - {name: mysql, state: present}
+      - {name: postfix, state: absent}
+      - {name: httpd, state: absent}
