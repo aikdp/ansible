@@ -12,10 +12,10 @@
       ansible.builtin.dnf:
         name: nginx
         state: present
-      when: ansible.os_family = "redhat"
+      when: ansible.os_family = "RedHat"
 
     - name: install nginx if underlying dist is debain
       ansible.builtin.apt:
         name: nginx
         state: prsent
-      when: ansible.os_family = "debain"
+      when: ansible.os_family = "Debain"
