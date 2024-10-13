@@ -1,0 +1,9 @@
+#forgot give varibles decalartion
+- name: demo on fileter or functions
+  hosts: local
+  connection: local
+  tasks:
+    - name: print the defalut variables
+      ansible.builtin.debug:
+        msg: "Hello {{ COURSE }}"
+        
