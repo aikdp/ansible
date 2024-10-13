@@ -1,4 +1,7 @@
 #CReating ec2-user in aws
+#mysql.telugudevops.online
+#backend.telugudevops.online
+#frontend.telugudevops.online
 
 - name: Crreate ec2 and R53 record
   hosts: local
@@ -43,4 +46,17 @@
         wait: true
         overwrite: true
       loop: "{{ ec2_instances.results }}"
-      # when: item.item == "f"
+     
+
+    - name: Cretae route53 for frontend # for telugudevops.online
+      amazon.aws.route53:
+        state: present
+        zone: "{{ domain }}"
+        record: "{{ domain }}"
+        type: A
+        ttl: 1
+        value: "{{ item.instances[0].public_ip_address }}"
+        wait: true
+        overwrite: true
+      loop: "{{ ec2_instances.results }}"
+      when: item.item == "frontend"
