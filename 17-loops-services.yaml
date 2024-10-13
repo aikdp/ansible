@@ -1,0 +1,15 @@
+#Installing dfew services using loops
+
+- name: Instlling services using loops
+  hosts: web
+  become: yes
+  tasks:
+    - name: install services
+      ansible.builtin.packages:
+        name: "{{ item }}"
+        state: present
+      loop:
+      - nginx
+      - mysql
+      - postfix
+      - httpd
