@@ -55,4 +55,4 @@
     - name: print the number graeter than 10
       ansible.builtin.debug:
         msg: "Given number  {{ number }} is greater than 10"
-      when: number > int 10
+      when: number | int > 10
