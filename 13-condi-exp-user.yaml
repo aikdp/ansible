@@ -8,5 +8,5 @@
       register: USER
 
     - name: Print output USER info
-      ansible.bulitin.debug:
+      ansible.builtin.debug:
         msg: "User info is {{ USER }}" 
