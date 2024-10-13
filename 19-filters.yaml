@@ -22,3 +22,9 @@
         wish: "Hi Ram, How are you"
       ansible.builtin.debug:
         msg: "{{ wish | upper }}"
+
+    - name: convert to  lower case
+      vars:
+        wish: "Hi RAM, How are YOu. I am GOOD PRasad"
+      ansible.builtin.debug:
+        msg: "{{ wish | lower }}"
