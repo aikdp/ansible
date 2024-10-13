@@ -44,7 +44,7 @@
     - name: list to dict/map convertion
       vars:
         course:
-        - name: "{Devops with Azure}"
-        - duration: "{120HRs}"
+          name: "Devops with Azure"
+          duration: "120HRs"
       ansible.builtin.debug:
-        msg: "{{ course | items2dict }}"
+        msg: "{{ course | dict2items }}"
