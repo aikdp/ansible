@@ -1,0 +1,23 @@
+#CReating ec2-user in aws
+
+- name: Crreate ec2 and R53 record
+  hosts: local
+  connection: local
+  vars:
+    subnet_id: "subnet-02571795c888dda45"
+    sg_id: "sg-09805cbd3e2c45d5b"
+    ami_id: "ami-09c813fb71547fc4f"
+    instances:
+    - mysql
+    - backend
+    - frontend
+  tasks:
+    - name: Craete ec2 instance
+      amazon.aws.ec2_instance:
+      name: "{{ item }}"
+      vpc_subnet_id: "{{ subnet_id }}"
+      instance_type: 
+      security_group: "{{ sg_id }}"
+      image_id: "{{ ami_id }}"
+      loop: "{{ instances }}"
+      register: ec2-instances
