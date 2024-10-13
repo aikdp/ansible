@@ -4,7 +4,7 @@
   hosts: local
   connection: local
   vars_prompt:
-    - name: numebr
+    - name: number
       prompt: Please enter number4
       private: false
   tasks:
@@ -17,4 +17,3 @@
       ansible.builtin.debug:
         msg: "Given number  {{ number }} is greater than 10"
       when: number | int > 10
-      
