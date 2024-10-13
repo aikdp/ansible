@@ -16,9 +16,9 @@
     - name: print the defalut variables
       ansible.builtin.debug:
         msg: " I am learning {{ COURSE | default ('AWS Devops') }}"
-        
+
     - name: convert to  upper case
       vars:
         wish: "Hi Ram, How are you"
       ansible.builtin.debug:
-        msg: "wish | upper"
+        msg: "{{ wish | upper }}"
