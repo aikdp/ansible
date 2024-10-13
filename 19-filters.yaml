@@ -35,13 +35,13 @@
       ansible.builtin.debug:
         msg: "{{ wish | unique }}"
 
-    - name: get the min and max numbers
+    - name: get the min and max numbers #get the Min ANd MAx value
       vars: 
         num: [ 12, 15, 17, 72, 12, 19 ]
       ansible.builtin.debug:
         msg: " Min number is {{ num | min }}, and Max number is {{ num | max }}"
 
-    - name: dict/map to list convertion
+    - name: dict/map to list convertion   #convert map to list
       vars:
         course:
           name: "Devops with Azure"
@@ -49,7 +49,7 @@
       ansible.builtin.debug:
         msg: "{{ course | dict2items }}"
 
-    - name: convert list to dict/map
+    - name: convert list to dict/map    #convert list to map
       vars:
         course:
         - {key: name, value: Devops with aws }
@@ -57,3 +57,10 @@
         - { key: trainer, value: Siva M}
       ansible.builtin.debug:
         msg: " {{ course | items2dict }}"
+
+
+    - name: check given ip is valid or not
+      vars:
+        my_ip: "750.25.6.3"
+      ansible.builtin.debug:
+        msg: "my_ip | ansible.utils.ipv4"
