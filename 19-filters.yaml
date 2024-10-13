@@ -40,3 +40,11 @@
         num: [ 12, 15, 17, 72, 12, 19 ]
       ansible.builtin.debug:
         msg: " Min number is {{ num | min }}, and Max number is {{ num | max }}"
+
+    - name: list to dict/map convertion
+      vars:
+        course:
+          name: "Devops with Azure"
+          duration: "120HRs"
+      ansible.builtin.debug:
+        msg: "{{ course | list2dict }}"
