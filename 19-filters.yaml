@@ -41,10 +41,19 @@
       ansible.builtin.debug:
         msg: " Min number is {{ num | min }}, and Max number is {{ num | max }}"
 
-    - name: list to dict/map convertion
+    - name: dict/map to list convertion
       vars:
         course:
           name: "Devops with Azure"
           duration: "120HRs"
       ansible.builtin.debug:
         msg: "{{ course | dict2items }}"
+
+    - name: convert list to dict/map
+      vars:
+        course:
+        - {key: name, value: Devops with aws }
+        - {key: duration, value: 120HRs}
+        - { key: trainer, value: Siva M}
+      ansible.builtin.debug:
+        msg: " {{ course | items2dict }}"
