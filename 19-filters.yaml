@@ -13,24 +13,30 @@
   hosts: local
   connection: local
   tasks:
-    - name: print the defalut variables
+    - name: print the defalut variables     #defalut vars
       ansible.builtin.debug:
         msg: " I am learning {{ COURSE | default ('AWS Devops') }}"
 
-    - name: convert to  upper case
+    - name: convert to  upper case    #converting upper case
       vars:
         wish: "Hi Ram, How are you"
       ansible.builtin.debug:
         msg: "{{ wish | upper }}"
 
-    - name: convert to  lower case
+    - name: convert to  lower case    #converting lower case
       vars:
         wish: "Hi RAM, How are YOu. I am GOOD PRasad"
       ansible.builtin.debug:
         msg: "{{ wish | lower }}"
 
-    - name: get the unique numbers
+    - name: get the unique numbers    #printing unique numbers only
       vars:
-        wish: [ 1,2,3,1,2,4,5,1,0,3,2,33,4,4,44 ]
+        wish: [ 1,2,3,1,2,4,5,1,0,3,2,33,4,4,44 ]   #list
       ansible.builtin.debug:
         msg: "{{ wish | unique }}"
+
+    - name: get the min and max numbers
+      vars: 
+        num: [ 12, 15, 17, 72, 12, 19 ]
+      ansible.builtin.debug:
+        msg: " Min number is {{ num | min }}, and Max number is {{ num | max }}"
