@@ -1,3 +1,17 @@
+# #check whethr userv expens eis exists or not
+# - name: Create user
+#   hosts: web
+#   become: yes
+#   tasks:
+#     - name: check the expense user exists or not 
+#       ansible.builtin.command: id expense
+#       register: USER
+
+#     - name: Print output USER info
+#       ansible.builtin.debug:
+#         msg: "User info is {{ USER }}" 
+
+
 #check whethr userv expens eis exists or not
 - name: Create user
   hosts: web
@@ -5,6 +19,7 @@
   tasks:
     - name: check the expense user exists or not 
       ansible.builtin.command: id expense
+      ignore_errors: true
       register: USER
 
     - name: Print output USER info
