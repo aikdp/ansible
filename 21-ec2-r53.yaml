@@ -1,7 +1,10 @@
-#CReating ec2-user in aws
-#mysql.telugudevops.online
-#backend.telugudevops.online
-#frontend.telugudevops.online
+#Creating ec2-user in aws
+# Question: We need to create instances with below type of records:
+# mysql.telugudevops.online	--->private ip
+# backend.telugudevops.onlin  --->private ip
+# frontend.telugudevops.online	--->private ip
+# telugudevops.online	--->public ip
+
 
 - name: Crreate ec2 and R53 record
   hosts: local

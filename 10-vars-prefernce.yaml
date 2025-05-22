@@ -1,4 +1,4 @@
-- name: Varibles preferences
+- name: Check varible preferences
   hosts: web
   vars_files:  #3-ommenting
   - vars.yaml
@@ -7,15 +7,15 @@
     DURATION: "20HRS"
     TRAINER: "SIVA REDDY"
   vars_prompt: #do not write anything in vars-prompt    #4-commenting
-        - name: COURSE
-          prompt: Please enter course name
-          private: false
-        - name: DURATION
-          prompt: Please enter duration
-          private: false
-        - name: TRAINER
-          prompt: Please enter ctrainer name
-          private: false
+    - name: COURSE
+      prompt: Please enter course name
+      private: false
+    - name: DURATION
+      prompt: Please enter duration
+      private: false
+    - name: TRAINER
+      prompt: Please enter ctrainer name
+      private: false
   tasks:
     - name: print the info preferences info
       vars:

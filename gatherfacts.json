@@ -1,0 +1,64 @@
+{
+    "user": {
+      "user_id": "root",
+      "user_dir": "/root",
+      "user_shell": "/bin/bash"
+    },
+    "system": {
+      "os": {
+        "distribution": "RedHat",
+        "release": "9.3 (Plow)",
+        "kernel": "5.14.0-362.18.1.el9_3.x86_64",
+        "architecture": "x86_64"
+      },
+      "hostname": "ip-172-31-24-200.ec2.internal",
+      "fqdn": "ip-172-31-24-200.ec2.internal",
+      "virtualization": {
+        "role": "guest",
+        "type": "kvm"
+      },
+      "python": {
+        "version": "3.9.18",
+        "executable": "/usr/bin/python3"
+      }
+    },
+    "memory": {
+      "total_ram_mb": 709,
+      "free_ram_mb": 63,
+      "total_swap_mb": 2047,
+      "free_swap_mb": 2022
+    },
+    "cpu": {
+      "processor": "Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz",
+      "cores": 1,
+      "threads_per_core": 2,
+      "virtual_cpus": 2
+    },
+    "load_average": {
+      "1_minute": 0.14,
+      "5_minutes": 0.04,
+      "15_minutes": 0.01
+    },
+    "network": {
+      "dns": {
+        "nameservers": ["172.31.0.2"],
+        "search_domain": "ec2.internal"
+      }
+    },
+    "security": {
+      "selinux": "disabled",
+      "apparmor": "disabled",
+      "fips": "enabled"
+    },
+    "bios": {
+      "vendor": "Amazon EC2",
+      "date": "10/16/2017",
+      "version": "1.0"
+    },
+    "environment_variables": {
+      "AWS_DEFAULT_REGION": "us-east-1",
+      "LANG": "C.UTF-8",
+      "PATH": "/root/.local/bin:/root/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin"
+    }
+  }
+  
